@@ -6,7 +6,7 @@ import {  MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-first-page',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule,MatIcon],
   templateUrl: './first-page-component.html',
   styleUrls: ['./first-page-component.css']
 })

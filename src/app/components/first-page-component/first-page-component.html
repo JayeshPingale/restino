@@ -1,326 +1,321 @@
-  <!-- Main Container -->
-    <div class="app-container">
+<div class="app-container">
       
-      <!-- HEADER / NAV -->
-      <nav class="navbar" [class.scrolled]="isScrolled">
-        <div class="container nav-content">
-          <!-- Logo -->
-          <a href="#" class="logo">
-            <span class="material-icons logo-icon">graphic_eq</span>
-            <span class="logo-text">RESONANTIA</span>
-          </a>
+  <!-- HEADER / NAV -->
+  <nav class="navbar" [class.scrolled]="isScrolled">
+    <div class="container nav-content">
+      <!-- Logo with Image -->
+      <a href="#home" class="logo">
+        <img src="/assets/images/Resonantia.png" alt="Resonantia Logo" class="logo-image">
+        <span class="logo-text"></span>
+      </a>
 
-          <!-- Desktop Menu -->
-          <div class="desktop-menu">
-            <a href="#home" class="nav-link">HOME</a>
-            <a href="#about" class="nav-link">WHO WE ARE</a>
-            <a href="#services" class="nav-link">SERVICES</a>
-            <a href="#contact" class="btn-quote">GET QUOTE</a>
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <button (click)="toggleMobileMenu()" class="mobile-menu-btn">
-            <span class="material-icons">{{ mobileMenuOpen ? 'close' : 'menu' }}</span>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-overlay" [class.open]="mobileMenuOpen">
-        <a (click)="toggleMobileMenu()" href="#home">HOME</a>
-        <a (click)="toggleMobileMenu()" href="#about">ABOUT</a>
-        <a (click)="toggleMobileMenu()" href="#services">SERVICES</a>
-        <a (click)="toggleMobileMenu()" href="#contact" class="highlight">CONTACT</a>
+      <!-- Desktop Menu -->
+      <div class="desktop-menu">
+        <a href="#home" class="nav-link">HOME</a>
+        <a href="#about" class="nav-link">WHO WE ARE</a>
+        <a href="#services" class="nav-link">SERVICES</a>
+        <a href="#contact" class="btn-quote">GET QUOTE</a>
       </div>
 
-      <!-- HERO SECTION -->
-      <section id="home" class="hero-section">
-        <!-- Background Elements -->
-        <div class="hero-bg-overlay">
-          <div class="blob blob-1"></div>
-          <div class="blob blob-2"></div>
-        </div>
-
-        <div class="container hero-container">
-          <div class="hero-text">
-            <div class="badge fade-in-up delay-1">
-              <span class="dot"></span>
-              AMPLIFY YOUR DIGITAL PRESENCE
-            </div>
-            <h1 class="fade-in-up delay-2">
-              We Craft <span class="gradient-text">Resonant</span> Experiences.
-            </h1>
-            <p class="hero-desc fade-in-up delay-3">
-           We are a renowned name for the best website design & development in Pune. We have channeled our passion in designing websites and developing mobile applications that are both alluring and provide a superb user experience. Our expertise includes an updated website design and mobile application development methodologies with implementation
-            </p>
-            <div class="hero-buttons fade-in-up delay-4">
-              <a href="#services" class="btn btn-primary">OUR SERVICES</a>
-              <a href="#contact" class="btn btn-outline">CONTACT US</a>
-            </div>
-          </div>
-          
-          <!-- Abstract Hero Visual -->
-          <div class="hero-visual fade-in-up delay-3">
-            <div class="spinner-container">
-              <div class="ring ring-1"></div>
-              <div class="ring ring-2"></div>
-              <div class="ring ring-3"></div>
-              <div class="center-icon">
-                <span class="material-icons">waves</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT SECTION -->
-      <section id="about" class="section about-section">
-        <div class="container">
-          <div class="grid-2">
-            
-            <!-- Skill Bars -->
-            <div class="skill-bars-container">
-              <div class="skill-item">
-                <div class="skill-label">
-                  <span>ARCHITECTURE & CODING</span>
-                  <span>95%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill fill-1" style="width: 95%"></div>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <div class="skill-label">
-                  <span>UI/UX DESIGN</span>
-                  <span>88%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill fill-2" style="width: 88%"></div>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <div class="skill-label">
-                  <span>MOTION & ANIMATION</span>
-                  <span>82%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill fill-3" style="width: 82%"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Content -->
-            <div class="about-content">
-              <h2 class="sub-heading">Who Is Resonantia</h2>
-              <h3 class="main-heading">Bridging the Gap Between Concept & Reality.</h3>
-              <p class="text-content">
-          We are team of Software Developers and Testers who are passionate about bringing some change in th stereotypical Website Development, Custom Software Development and Mobile App Development. We have predesigned templates and themes to choose from for your business.
-              </p>
-              <div class="features-grid">
-                <div class="feature-box border-cyan">
-                  <h4>Scalable</h4>
-                  <p>Built to grow with you.</p>
-                </div>
-                <div class="feature-box border-purple">
-                  <h4>Secure</h4>
-                  <p>Fortified digital assets.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES SECTION -->
-      <section id="services" class="section services-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="sub-heading">Our Capabilities</h2>
-            <h3 class="main-heading">What We Provide</h3>
-            <div class="divider"></div>
-          </div>
-
-          <div class="grid-3">
-            <!-- Service 1 -->
-            <div class="service-card card-cyan">
-              <div class="icon-box bg-cyan-light">
-                <span class="material-icons text-cyan">trending_up</span>
-              </div>
-              <h4>SEO Analysis</h4>
-              <p>
-                Dominate search rankings. Our data-driven SEO strategies have helped hundreds of clients achieve organic growth and visibility.
-              </p>
-              <a href="#contact" class="card-link text-cyan">
-                LEARN MORE <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-card card-purple">
-              <div class="icon-box bg-purple-light">
-                <span class="material-icons text-purple">devices</span>
-              </div>
-              <h4>Web & Mobile Apps</h4>
-              <p>
-                From responsive PWA websites to native iOS/Android apps, we engineer robust platforms that users love to interact with.
-              </p>
-              <a href="#contact" class="card-link text-purple">
-                LEARN MORE <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card card-amber">
-              <div class="icon-box bg-amber-light">
-                <span class="material-icons text-amber">terminal</span>
-              </div>
-              <h4>Custom Software</h4>
-              <p>
-                Tailor-made ERPs and CRMs. We don't just use templates; we build specific logic to solve your unique business problems.
-              </p>
-              <a href="#contact" class="card-link text-amber">
-                LEARN MORE <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- STATS BANNER -->
-      <section class="stats-section">
-        <div class="container grid-4">
-          <div class="stat-item">
-            <span class="material-icons stat-icon text-cyan-300">group</span>
-            <div class="stat-number">150+</div>
-            <div class="stat-label">Happy Clients</div>
-          </div>
-          <div class="stat-item">
-            <span class="material-icons stat-icon text-purple-300">code</span>
-            <div class="stat-number">340+</div>
-            <div class="stat-label">Projects Done</div>
-          </div>
-          <div class="stat-item">
-            <span class="material-icons stat-icon text-pink-300">coffee</span>
-            <div class="stat-number">9k+</div>
-            <div class="stat-label">Cups of Coffee</div>
-          </div>
-          <div class="stat-item">
-            <span class="material-icons stat-icon text-amber-300">star</span>
-            <div class="stat-number">15</div>
-            <div class="stat-label">Years Exp</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- NEW CONTACT SECTION -->
-      <section id="contact" class="section contact-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="sub-heading">CONTACT US</h2>
-            <h3 class="main-heading">Get In Touch With Us <span class="text-purple-300">Now</span></h3>
-            <div class="divider"></div>
-          </div>
-
-          <div class="contact-layout">
-            
-            <!-- Left Side: Map -->
-            <div class="map-container">
-              <iframe 
-                src="https://maps.google.com/maps?q=504,Ganeesham E,Pimple Saudagar,Pune&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-              <div class="map-overlay-hint">
-                <span class="material-icons">place</span> 504, Ganeesham E
-              </div>
-            </div>
-
-            <!-- Right Side: Interaction Panel -->
-            <div class="interaction-panel">
-              
-              <!-- Info Cards Row -->
-              <div class="info-cards-row">
-                <div class="mini-card">
-                  <div class="mini-icon-box bg-cyan-light">
-                    <span class="material-icons text-cyan">phone</span>
-                  </div>
-                  <div class="mini-text">+91-8788854020</div>
-                </div>
-
-                <div class="mini-card">
-                  <div class="mini-icon-box bg-purple-light">
-                    <span class="material-icons text-purple">email</span>
-                  </div>
-                  <div class="mini-text text-sm">info&#64;resonantia.in</div>
-                </div>
-
-                <div class="mini-card">
-                  <div class="mini-icon-box bg-amber-light">
-                    <span class="material-icons text-amber">place</span>
-                  </div>
-                  <div class="mini-text">Pune, India</div>
-                </div>
-              </div>
-
-              <!-- Form -->
-              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="modern-form">
-                
-                <div class="form-row">
-                  <div class="form-group half-width">
-                    <input type="text" formControlName="name" placeholder="Name" class="input-field">
-                  </div>
-                  <div class="form-group half-width">
-                    <input type="email" formControlName="email" placeholder="Your Email" class="input-field">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <input type="text" formControlName="subject" placeholder="Subject" class="input-field">
-                </div>
-
-                <div class="form-group">
-                  <textarea rows="5" formControlName="message" placeholder="Message" class="input-field"></textarea>
-                </div>
-
-                <button type="submit" [disabled]="contactForm.invalid || isSubmitting" class="submit-btn-large">
-                  <span *ngIf="isSubmitting" class="material-icons spin">refresh</span>
-                  {{ isSubmitting ? 'SENDING...' : 'Send Message Now' }}
-                </button>
-
-                <!-- Success Message -->
-                <div *ngIf="showSuccess" class="success-alert">
-                  Message sent successfully!
-                </div>
-              </form>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="footer">
-        <div class="container footer-content">
-          <div class="footer-brand">
-             <span class="material-icons footer-icon">graphic_eq</span>
-             <span class="footer-name">RESONANTIA</span>
-          </div>
-          <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Sitemap</a>
-          </div>
-          <div class="copyright">
-            &copy; 2025 Resonantia Lab. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <!-- Mobile Menu Button -->
+      <button (click)="toggleMobileMenu()" class="mobile-menu-btn">
+        <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+      </button>
     </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" [class.open]="mobileMenuOpen">
+    <a (click)="toggleMobileMenu()" href="#home">HOME</a>
+    <a (click)="toggleMobileMenu()" href="#about">ABOUT</a>
+    <a (click)="toggleMobileMenu()" href="#services">SERVICES</a>
+    <a (click)="toggleMobileMenu()" href="#contact" class="highlight">CONTACT</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-overlay">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-text">
+        <div class="badge fade-in-up delay-1">
+          <span class="dot"></span>
+          AMPLIFY YOUR DIGITAL PRESENCE
+        </div>
+        <h1 class="fade-in-up delay-2">
+          We Craft <span class="gradient-text">Resonant</span> Experiences.
+        </h1>
+        <p class="hero-desc fade-in-up delay-3">
+         We are a renowned name for the best website design & development in Pune. We have channeled our passion in designing websites and developing mobile applications that are both alluring and provide a superb user experience. Our expertise includes an updated website design and mobile application development methodologies with implementation
+        </p>
+        <div class="hero-buttons fade-in-up delay-4">
+          <a href="#services" class="btn btn-primary">OUR SERVICES</a>
+          <a href="#contact" class="btn btn-outline">CONTACT US</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual fade-in-up delay-3">
+        <div class="spinner-container">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="center-icon">
+            <mat-icon>waves</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="grid-2">
+        
+        <!-- Skill Bars -->
+        <div class="skill-bars-container">
+          <div class="skill-item">
+            <div class="skill-label">
+              <span>ARCHITECTURE & CODING</span>
+              <span>95%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill fill-1" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span>UI/UX DESIGN</span>
+              <span>88%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill fill-2" style="width: 88%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span>MOTION & ANIMATION</span>
+              <span>82%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill fill-3" style="width: 82%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-content">
+          <h2 class="sub-heading">Who Is Resonantia</h2>
+          <h3 class="main-heading">Bridging the Gap Between Concept & Reality.</h3>
+          <p class="text-content">
+          
+We are team of Software Developers and Testers who are passionate about bringing some change in th stereotypical Website Development, Custom Software Development and Mobile App Development. We have predesigned templates and themes to choose from for your business.  
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-box border-cyan">
+              <h4>Scalable</h4>
+              <p>Built to grow with you.</p>
+            </div>
+            <div class="feature-box border-purple">
+              <h4>Secure</h4>
+              <p>Fortified digital assets.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="sub-heading">Our Capabilities</h2>
+        <h3 class="main-heading">What We Provide</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid-3">
+        <div class="service-card card-cyan">
+          <div class="icon-box bg-cyan-light">
+            <mat-icon class="text-cyan">trending_up</mat-icon>
+          </div>
+          <h4>SEO Analysis</h4>
+          <p>
+            Dominate search rankings. Our data-driven SEO strategies have helped hundreds of clients achieve organic growth.
+          </p>
+          <a href="#contact" class="card-link text-cyan">
+            LEARN MORE <mat-icon>arrow_forward</mat-icon>
+          </a>
+        </div>
+
+        <div class="service-card card-purple">
+          <div class="icon-box bg-purple-light">
+            <mat-icon class="text-purple">devices</mat-icon>
+          </div>
+          <h4>Web & Mobile Apps</h4>
+          <p>
+            From responsive PWA websites to native iOS/Android apps, we engineer robust platforms that users love.
+          </p>
+          <a href="#contact" class="card-link text-purple">
+            LEARN MORE <mat-icon>arrow_forward</mat-icon>
+          </a>
+        </div>
+
+        <div class="service-card card-amber">
+          <div class="icon-box bg-amber-light">
+            <mat-icon class="text-amber">terminal</mat-icon>
+          </div>
+          <h4>Custom Software</h4>
+          <p>
+            Tailor-made ERPs and CRMs. We don't just use templates; we build specific logic to solve your unique problems.
+          </p>
+          <a href="#contact" class="card-link text-amber">
+            LEARN MORE <mat-icon>arrow_forward</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="stats-section">
+    <div class="container grid-4">
+      <div class="stat-item">
+        <mat-icon class="stat-icon text-cyan-300">group</mat-icon>
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item">
+        <mat-icon class="stat-icon text-purple-300">code</mat-icon>
+        <div class="stat-number">340+</div>
+        <div class="stat-label">Projects Done</div>
+      </div>
+      <div class="stat-item">
+        <mat-icon class="stat-icon text-pink-300">coffee</mat-icon>
+        <div class="stat-number">9k+</div>
+        <div class="stat-label">Cups of Coffee</div>
+      </div>
+      <div class="stat-item">
+        <mat-icon class="stat-icon text-amber-300">star</mat-icon>
+        <div class="stat-number">15</div>
+        <div class="stat-label">Years Exp</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="sub-heading">CONTACT US</h2>
+        <h3 class="main-heading">Get In Touch With Us <span class="text-purple-300">Now</span></h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="contact-layout">
+        
+        <!-- Left Side: Map -->
+        <div class="map-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=504,Ganeesham E,Pimple Saudagar,Pune&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-overlay-hint">
+            <mat-icon>place</mat-icon> 504, Ganeesham E
+          </div>
+        </div>
+
+        <!-- Right Side: Interaction Panel -->
+        <div class="interaction-panel">
+          
+          <!-- Info Cards Row -->
+          <div class="info-cards-row">
+            <div class="mini-card">
+              <div class="mini-icon-box bg-cyan-light">
+                <mat-icon class="text-cyan">phone</mat-icon>
+              </div>
+              <div class="mini-text">+91- 8788854020</div>
+            </div>
+
+            <div class="mini-card">
+              <div class="mini-icon-box bg-purple-light">
+                <mat-icon class="text-purple">email</mat-icon>
+              </div>
+              <div class="mini-text text-sm">info&#64;resonantia.in</div>
+            </div>
+
+            <div class="mini-card">
+              <div class="mini-icon-box bg-amber-light">
+                <mat-icon class="text-amber">place</mat-icon>
+              </div>
+              <div class="mini-text">Pune, India</div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="modern-form">
+            
+            <div class="form-row">
+              <div class="form-group half-width">
+                <input type="text" formControlName="name" placeholder="Name" class="input-field">
+              </div>
+              <div class="form-group half-width">
+                <input type="email" formControlName="email" placeholder="Your Email" class="input-field">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" formControlName="subject" placeholder="Subject" class="input-field">
+            </div>
+
+            <div class="form-group">
+              <textarea rows="5" formControlName="message" placeholder="Message" class="input-field"></textarea>
+            </div>
+
+            <button type="submit" [disabled]="contactForm.invalid || isSubmitting" class="submit-btn-large">
+              <mat-icon *ngIf="isSubmitting" class="spin">refresh</mat-icon>
+              {{ isSubmitting ? 'SENDING...' : 'Send Message Now' }}
+            </button>
+
+            <div *ngIf="showSuccess" class="success-alert">
+              Message sent successfully!
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <mat-icon class="footer-icon">graphic_eq</mat-icon>
+        <span class="footer-name">RESONANTIA</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Resonantia Lab. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</div>
