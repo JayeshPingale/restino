@@ -1,19 +1,23 @@
-// first-page.component.ts (Material Icon variant)
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {  MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { EmailService } from '../../services/email-service';
+
 @Component({
   selector: 'app-first-page',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FormsModule,MatIcon],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, MatIconModule, MatSnackBarModule],
   templateUrl: './first-page-component.html',
   styleUrls: ['./first-page-component.css']
 })
 export class FirstPageComponent implements OnInit {
- fb = inject(FormBuilder);
-  
-   mobileMenuOpen = false;
+  fb = inject(FormBuilder);
+  private emailService = inject(EmailService);
+  private snackBar = inject(MatSnackBar);
+
+  mobileMenuOpen = false;
   isScrolled = false;
   isSubmitting = false;
   showSuccess = false;
@@ -30,8 +34,9 @@ export class FirstPageComponent implements OnInit {
       this.isScrolled = window.scrollY > 50;
     });
   }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // no-op
   }
 
   toggleMobileMenu() {
@@ -39,22 +44,31 @@ export class FirstPageComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      this.isSubmitting = true;
-      const formData = this.contactForm.value;
+    if (!this.contactForm.valid || this.isSubmitting) return;
 
-      console.log('--- EMAIL SIMULATION ---');
-      console.log('Sending data to:', 'your-email@example.com');
-      console.log('Data:', formData);
+    this.isSubmitting = true;
+    const formData = this.contactForm.value;
+
+    this.emailService.sendContact({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message
+    })
+    .then(() => {
+      this.isSubmitting = false;
+      this.showSuccess = true;
+      this.contactForm.reset();
+      // this.snackBar.open('Message sent — we will contact you soon!', 'Close', { duration: 5000, verticalPosition: 'top' });
 
       setTimeout(() => {
-        this.isSubmitting = false;
-        this.showSuccess = true;
-        this.contactForm.reset();
-        setTimeout(() => {
-          this.showSuccess = false;
-        }, 5000);
-      }, 1500);
-    }
+        this.showSuccess = false;
+      }, 5000);
+    })
+    .catch((err) => {
+      console.error('EmailJS error:', err);
+      this.isSubmitting = false;
+      // this.snackBar.open('Failed to send message. Please try again later.', 'Close', { duration: 6000, verticalPosition: 'top' });
+    });
   }
 }
